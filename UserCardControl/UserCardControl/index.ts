@@ -10,6 +10,7 @@ export class UserCardControl implements ComponentFramework.StandardControl<IInpu
 	private _context: ComponentFramework.Context<IInputs>;
 	private _refreshData: EventListenerOrEventListenerObject;
 
+	private userlabelElement: HTMLLabelElement;
 	
 	constructor()
 	{
@@ -47,14 +48,26 @@ export class UserCardControl implements ComponentFramework.StandardControl<IInpu
 		this.labelElement.setAttribute("class", "LinearRangeLabel");
 		this.labelElement.setAttribute("id", "lrclabel");
 
+		// New User Details
+		
+		this.userlabelElement = document.createElement("label");
+		this.userlabelElement.setAttribute("class", "UserDetailsLabel");
+		this.userlabelElement.setAttribute("id", "userdetailslabel");
+
 		// retrieving the latest value from the control and setting it to the HTMl elements.
 		this._value = context.parameters.controlValue.raw!;		
 		this.inputElement.setAttribute("value", context.parameters.controlValue.formatted ? context.parameters.controlValue.formatted : "0");
 		this.labelElement.innerHTML = context.parameters.controlValue.formatted ? context.parameters.controlValue.formatted : "0";
 
+		this.userlabelElement.innerHTML = "<br/><br/>" + context.userSettings.userId + " ---- " + context.userSettings.userName;
+		this.userlabelElement.innerHTML = "<br/><br/>" + context.userSettings.dateFormattingInfo + " ---- " + context.userSettings.languageId;
+		
+		
 		// appending the HTML elements to the control's HTML container element.
 		this._container.appendChild(this.inputElement);
 		this._container.appendChild(this.labelElement);
+		this._container.appendChild(this.userlabelElement);
+
 		container.appendChild(this._container);
 	}
 
