@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="CustomPCFInputTextFormatterNamespace" constructor="CustomPCFInputTextFormatterControl" version="2.3.2" display-name-key="CustomPCFInputTextFormatterControl" description-key="Custom PCF Input Text Formatter Control" control-type="standard" >    
+    <external-service-usage enabled="false">
+    </external-service-usage>
+    <property name="formatTypeProperty"  display-name-key="Format Type" description-key="Format Types" of-type="Enum" usage="input" required="true">      
+      <value name="Date" display-name-key="Date" description-key="Date Description">Date</value>
+      <value name="Time" display-name-key="Time" description-key="Time Description">Time</value>
+      <value name="DateTime" display-name-key="DateTime" description-key="DateTime Description">DateTime</value>      
+      <value name="Password" display-name-key="Password" description-key="Password Description">Password</value>
+      <value name="Custom" display-name-key="Custom Pattern" description-key="Custom Pattern">Custom</value>
+    </property>
+    <property name="CustomFormatTextProperty" display-name-key="Regular expression for Custom Pattern" description-key="Regular expression for Custom Pattern" of-type="SingleLine.Text" usage="input" />
+    <property name="CustomFormatTextMessageProperty" display-name-key="Message for Custom Pattern" description-key="Message for Custom Pattern" of-type="SingleLine.Text" usage="input" />
+    <property name="MandatoryProperty" display-name-key="Required" description-key="Required" of-type="TwoOptions" usage="input" />
+    <property name="InputBoxCssStyleProperty" display-name-key="Input Box Css Style" description-key="Input Box Css Style" of-type="SingleLine.Text" usage="input" />
+    <property name="InputBoxRequiredCssStyleProperty" display-name-key="Input Box Required Css Style" description-key="Input Box Required Css Style" of-type="SingleLine.Text" usage="input" />
+    <property name="OutputValue" display-name-key="Output Value" description-key="Output Value" of-type="SingleLine.Text" usage="bound" />
+    <property name="IsValid" display-name-key="Is Valid" description-key="Is Valid" of-type="TwoOptions" usage="bound" />
+    <resources>
+      <code path="index.ts" order="1"/>
+      <css path="css/CustomPCFInputTextFormatterControl.css" order="1" />
+    </resources>    
+  </control>
+</manifest>

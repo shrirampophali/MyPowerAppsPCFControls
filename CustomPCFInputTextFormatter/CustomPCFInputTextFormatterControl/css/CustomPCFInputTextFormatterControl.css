@@ -1,0 +1,10 @@
+.CustomPCFInputTextFormatterNamespace\.CustomPCFInputTextFormatterControl div {
+	width:100%;
+}   
+.CustomPCFInputTextFormatterNamespace\.CustomPCFInputTextFormatterControl div #divinputfield {   
+	width:90%;
+	float: left;
+}
+.CustomPCFInputTextFormatterNamespace\.CustomPCFInputTextFormatterControl input {
+	padding: 5px;
+}
